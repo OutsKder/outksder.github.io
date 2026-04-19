@@ -8,65 +8,131 @@
 </head>
 <body>
   <div class="bg-glow"></div>
+  <div class="bg-glow bg-glow-secondary"></div>
+  <div class="bg-grid"></div>
 
   <header class="hero">
     <nav class="top-nav">
       <div class="brand">Portfolio</div>
-      <a class="btn btn-small" href="./作品展示.pdf" target="_blank" rel="noopener noreferrer">下载 PDF</a>
     </nav>
-
     <div class="hero-content">
-      <p class="kicker">Personal Website</p>
-      <h1>你好，我是创作者</h1>
-      <p class="subtitle">这里展示我的项目、设计思路与成长轨迹。欢迎浏览我的作品集。</p>
+      <p class="kicker">Project Showcase</p>
+      <h1>项目分组展示</h1>
+      <p class="subtitle">每个项目包含简介与对应截图，便于快速理解项目目标、技术路线和产出效果。</p>
       <div class="hero-actions">
-        <a class="btn" href="#works">查看作品</a>
-        <a class="btn btn-ghost" href="#preview">在线预览 PDF</a>
+        <a class="btn" href="#projects">查看项目</a>
       </div>
     </div>
   </header>
 
   <main class="content">
-    <section id="works" class="section">
-      <h2>精选内容</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>作品展示手册</h3>
-          <p>完整收录项目介绍、视觉输出与核心思考，适合系统浏览。</p>
-          <a class="text-link" href="./作品展示.pdf" target="_blank" rel="noopener noreferrer">打开文档</a>
-        </article>
-        <article class="card">
-          <h3>技能关键词</h3>
-          <p>可按你的实际情况继续修改：前端开发、UI 设计、产品策划、内容创作。</p>
-          <div class="tags">
-            <span>前端开发</span>
-            <span>视觉设计</span>
-            <span>产品思维</span>
+    <section id="projects" class="section">
+      <h2>项目列表</h2>
+      <div class="project-list">
+        <article class="card card-project">
+          <h3>项目 01 · 手势分类实验室</h3>
+          <p>一个面向教学的轻量级手势识别实验系统，基于浏览器端 MediaPipe Hands 提取 21 点手部关键点后进行特征归一化，并通过可交互 KNN 完成“石头/剪刀/布”实时分类与决策边界可视化，强调从感知、特征工程到分类推断的完整链路。</p>
+          <div class="gallery">
+            <figure class="shot"><img src="./图片1.png" alt="手势分类实验室"></figure>
           </div>
         </article>
-        <article class="card">
-          <h3>关于我</h3>
-          <p>热爱把想法做成可被体验的作品，关注审美、逻辑与用户感受。</p>
-          <p>可在这里追加联系方式：邮箱 / 微信 / GitHub。</p>
-        </article>
-      </div>
-    </section>
 
-    <section id="preview" class="section card card-large">
-      <h2>在线浏览作品集</h2>
-      <p>若移动端显示不完整，可点击上方“下载 PDF”获得最佳阅读体验。</p>
-      <div class="pdf-wrap">
-        <iframe
-          src="./作品展示.pdf"
-          title="作品展示 PDF"
-          loading="lazy">
-        </iframe>
+        <article class="card card-project">
+          <h3>项目 02 · 浏览器内机器学习流程编排平台</h3>
+          <p>一个在浏览器内完成机器学习流程编排与执行的可视化实验平台：前端基于 React + TypeScript + React Flow 提供拖拽式节点画布，将 DAG 自动编译为 Python 代码后交给 Web Worker 中的 Pyodide 运行时执行，并在右侧输出训练结果及可视化。</p>
+          <div class="gallery">
+            <figure class="shot"><img src="./图片2.png" alt="浏览器内机器学习流程编排平台"></figure>
+          </div>
+        </article>
+
+        <article class="card card-project">
+          <h3>项目 03 · MediaPipe Holistic 多模态体征提取演示</h3>
+          <p>基于 MediaPipe Holistic 的多模态体征提取演示页面，聚焦手部、面部网格与全身姿态关键点的实时检测与渲染展示，主要用于验证前端视觉感知能力与交互可视化效果，而非训练型任务。</p>
+          <div class="gallery">
+            <figure class="shot"><img src="./图片3.png" alt="MediaPipe Holistic 多模态体征提取演示"></figure>
+          </div>
+        </article>
+
+        <article class="card card-project">
+          <h3>项目 04 · 计算机视觉实训平台</h3>
+          <p>一个面向教学与竞赛场景的计算机视觉实训平台，核心能力覆盖数据与权重管理、图像预处理、模型训练、推理和评估对比等完整实验流程。</p>
+          <div class="gallery">
+            <figure class="shot"><img src="./图片5.png" alt="计算机视觉实训平台 图5"></figure>
+            <figure class="shot"><img src="./图片6.png" alt="计算机视觉实训平台 图6"></figure>
+            <figure class="shot"><img src="./图片7.png" alt="计算机视觉实训平台 图7"></figure>
+            <figure class="shot"><img src="./图片8.png" alt="计算机视觉实训平台 图8"></figure>
+          </div>
+        </article>
+
+        <article class="card card-project">
+          <h3>项目 05 · NLP 实训平台</h3>
+          <p>NLP 实训平台面向教学与竞赛场景，提供从数据准备、模型微调到评估导出的全流程实践环境，以统一、清晰、可复现的实验链路降低大模型应用门槛，帮助学习者系统掌握自然语言处理任务构建方法，帮助团队高效沉淀训练经验与模型成果。</p>
+          <div class="gallery">
+            <figure class="shot"><img src="./图片9.png" alt="NLP 实训平台 图9"></figure>
+            <figure class="shot"><img src="./图片10.png" alt="NLP 实训平台 图10"></figure>
+            <figure class="shot"><img src="./图片11.png" alt="NLP 实训平台 图11"></figure>
+          </div>
+        </article>
+
+        <article class="card card-project">
+          <h3>项目 06 · transformer-explainer</h3>
+          <p>一个面向教学的 Transformer 机制可视化讲解页面，聚焦输入嵌入、位置编码、自注意力、前馈网络与输出预测的逐步演示。通过流程拆解与动态图示帮助学习者直观理解注意力权重如何影响信息聚合，以及多层结构如何完成上下文建模。</p>
+          <div class="gallery">
+            <figure class="shot"><img src="./图片12.png" alt="transformer-explainer"></figure>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 个人作品展示 · Built with GitHub Pages</p>
+    <p>© 2026 个人作品集 · Built with GitHub Pages</p>
   </footer>
+
+  <div id="image-lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightbox-close" class="lightbox-close" type="button" aria-label="关闭预览">×</button>
+    <img id="lightbox-image" class="lightbox-image" src="" alt="">
+  </div>
+
+  <script>
+    (function () {
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const closeButton = document.getElementById("lightbox-close");
+      const galleryImages = document.querySelectorAll(".shot img");
+
+      function openLightbox(sourceImage) {
+        lightboxImage.src = sourceImage.src;
+        lightboxImage.alt = sourceImage.alt || "作品预览图";
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+      }
+
+      galleryImages.forEach(function (image) {
+        image.addEventListener("click", function () {
+          openLightbox(image);
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -18,7 +18,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: linear-gradient(180deg, #f6f8ff 0%, #f1f4ff 100%);
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
@@ -32,6 +32,27 @@ body {
   background: radial-gradient(circle, rgba(79, 70, 229, 0.18), rgba(79, 70, 229, 0));
   pointer-events: none;
   z-index: -1;
+  animation: floatGlowA 12s ease-in-out infinite;
+}
+
+.bg-glow-secondary {
+  inset: auto -12% -24% auto;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.15), rgba(14, 165, 233, 0));
+  animation: floatGlowB 14s ease-in-out infinite;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(79, 70, 229, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at 50% 40%, #000 35%, transparent 90%);
 }
 
 .hero {
@@ -141,6 +162,11 @@ body {
   gap: 16px;
 }
 
+.project-list {
+  display: grid;
+  gap: 18px;
+}
+
 .card {
   background: var(--card);
   border-radius: 18px;
@@ -160,6 +186,10 @@ body {
 
 .card-large h2 {
   margin-top: 0;
+}
+
+.card-project p {
+  margin-bottom: 14px;
 }
 
 .text-link {
@@ -189,18 +219,70 @@ body {
   font-weight: 600;
 }
 
-.pdf-wrap {
-  margin-top: 12px;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.shot {
+  margin: 0;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   background: #fff;
 }
 
-.pdf-wrap iframe {
+.shot img {
+  display: block;
   width: 100%;
-  height: min(80vh, 900px);
+  height: 180px;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.shot img:hover {
+  transform: scale(1.03);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 22, 38, 0.84);
+  z-index: 999;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-image {
+  max-width: min(1200px, 92vw);
+  max-height: 88vh;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+  animation: popIn 0.18s ease-out;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
   border: 0;
+  border-radius: 999px;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .footer {
@@ -221,4 +303,19 @@ body {
   .hero-content {
     padding: 36px 16px;
   }
+}
+
+@keyframes floatGlowA {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(16px, -18px, 0) scale(1.05); }
+}
+
+@keyframes floatGlowB {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-14px, 12px, 0) scale(1.06); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
